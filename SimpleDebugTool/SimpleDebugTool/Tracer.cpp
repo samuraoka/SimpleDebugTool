@@ -7,15 +7,17 @@ Tracer::Tracer(char const *filename, unsigned const line) :
 {
 }
 
-template <typename... Args>
-auto Tracer::operator()(wchar_t const *format, Args... args) const -> void
+auto Tracer::operator()(wchar_t const *format, ...) const -> void
 {
 	wchar_t buffer[1024];
 	auto count = swprintf_s(buffer, L"%S(%d): ", m_filename, m_line);
 	ASSERT(-1 != count);
 
-	ASSERT(-1 != _snwprintf_s(buffer + count, _countof(buffer) - count,
-		_countof(buffer) - count - 1, format, args...));
+	va_list args;
+	va_start(args, format);
+	ASSERT(-1 != _vsnwprintf_s(buffer + count, _countof(buffer) - count,
+		_countof(buffer) - count - 1, format, args));
+	va_end(args);
 
 	OutputDebugString(buffer);
 }

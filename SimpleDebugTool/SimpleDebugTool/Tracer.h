@@ -6,13 +6,17 @@
 #define TRACE __noop
 #endif
 
-class Tracer
+#ifdef SIMPLEDEBUGTOOL_EXPORTS
+#define SIMPLEDEBUGTOOL_API __declspec(dllexport)
+#else
+#define SIMPLEDEBUGTOOL_API __declspec(dllimport)
+#endif
+
+class SIMPLEDEBUGTOOL_API Tracer
 {
 public:
 	Tracer(char const *filename, unsigned const line);
-
-	template <typename... Args>
-	auto operator()(wchar_t const *format, Args... args) const -> void;
+	auto operator()(wchar_t const *format, ...) const -> void;
 
 private:
 	char const *m_filename;
