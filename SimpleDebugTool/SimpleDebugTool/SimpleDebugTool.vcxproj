@@ -98,7 +98,9 @@
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)Tracer.h $(SolutionDir)include
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)Tracer.h $(SolutionDir)include
+if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
@@ -119,7 +121,9 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)Tracer.h $(SolutionDir)include
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)Tracer.h $(SolutionDir)include
+if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
@@ -144,7 +148,9 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)Tracer.h $(SolutionDir)include
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)Tracer.h $(SolutionDir)include
+if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
@@ -169,7 +175,9 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)Tracer.h $(SolutionDir)include
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)Tracer.h $(SolutionDir)include
+if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
