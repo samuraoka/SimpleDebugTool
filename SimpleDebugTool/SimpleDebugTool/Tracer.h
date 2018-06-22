@@ -19,6 +19,7 @@ public:
 	auto operator()(wchar_t const *format, ...) const -> void;
 
 private:
+	int m_pid;
 	char const *m_filename;
 	unsigned int m_line;
 };
