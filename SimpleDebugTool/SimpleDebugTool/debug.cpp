@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Tracer.h"
+#include "debug.h"
 
 Tracer::Tracer(char const *filename, unsigned const line) :
 	m_pid{ _getpid() },

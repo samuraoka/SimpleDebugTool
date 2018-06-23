@@ -1,6 +1,22 @@
 #pragma once
 
 #ifdef _DEBUG
+#include <Windows.h>
+#include <crtdbg.h>
+//TODO
+#endif // _DEBUG
+
+#ifdef _DEBUG
+#define ASSERT _ASSERTE
+#define VERIFY ASSERT
+//TODO
+#else
+#define ASSERT __noop
+#define VERIFY(expression) (expression)
+//TODO
+#endif // _DEBUG
+
+#ifdef _DEBUG
 #define TRACE Tracer(__FILE__, __LINE__)
 #else
 #define TRACE __noop
@@ -12,14 +28,14 @@
 #define SIMPLEDEBUGTOOL_API __declspec(dllimport)
 #endif
 
-class SIMPLEDEBUGTOOL_API Tracer
+#ifdef _DEBUG
+struct SIMPLEDEBUGTOOL_API Tracer
 {
-public:
 	Tracer(char const *filename, unsigned const line);
 	auto operator()(wchar_t const *format, ...) const -> void;
 
-private:
 	int m_pid;
 	char const *m_filename;
 	unsigned int m_line;
 };
+#endif // _DEBUG
