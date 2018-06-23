@@ -98,12 +98,20 @@
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
-copy $(ProjectDir)debug.h $(SolutionDir)include
-if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
+      <Command>if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)debug.h $(SolutionDir)include
+copy $(ProjectDir)handle.h $(SolutionDir)include
+</Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -121,12 +129,20 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
-copy $(ProjectDir)debug.h $(SolutionDir)include
-if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
+      <Command>if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)debug.h $(SolutionDir)include
+copy $(ProjectDir)handle.h $(SolutionDir)include
+</Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -148,12 +164,20 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
-copy $(ProjectDir)debug.h $(SolutionDir)include
-if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
+      <Command>if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)debug.h $(SolutionDir)include
+copy $(ProjectDir)handle.h $(SolutionDir)include
+</Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -175,14 +199,23 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
-copy $(ProjectDir)debug.h $(SolutionDir)include
-if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
+      <Command>if not exist $(SolutionDir)lib mkdir $(SolutionDir)lib
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)_$(Platform).lib
 </Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if not exist $(SolutionDir)include mkdir $(SolutionDir)include
+copy $(ProjectDir)debug.h $(SolutionDir)include
+copy $(ProjectDir)handle.h $(SolutionDir)include
+</Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="handle.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="debug.h" />
