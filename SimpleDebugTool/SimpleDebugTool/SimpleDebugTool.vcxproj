@@ -107,6 +107,7 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
 copy $(ProjectDir)debug.h $(SolutionDir)include
 copy $(ProjectDir)handle.h $(SolutionDir)include
 copy $(ProjectDir)util.h $(SolutionDir)include
+copy $(ProjectDir)event.h $(SolutionDir)include
 </Command>
     </PreBuildEvent>
     <PreLinkEvent>
@@ -139,6 +140,7 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
 copy $(ProjectDir)debug.h $(SolutionDir)include
 copy $(ProjectDir)handle.h $(SolutionDir)include
 copy $(ProjectDir)util.h $(SolutionDir)include
+copy $(ProjectDir)event.h $(SolutionDir)include
 </Command>
     </PreBuildEvent>
     <PreLinkEvent>
@@ -175,6 +177,7 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
 copy $(ProjectDir)debug.h $(SolutionDir)include
 copy $(ProjectDir)handle.h $(SolutionDir)include
 copy $(ProjectDir)util.h $(SolutionDir)include
+copy $(ProjectDir)event.h $(SolutionDir)include
 </Command>
     </PreBuildEvent>
     <PreLinkEvent>
@@ -211,6 +214,7 @@ copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(TargetName)_$(Configuration)
 copy $(ProjectDir)debug.h $(SolutionDir)include
 copy $(ProjectDir)handle.h $(SolutionDir)include
 copy $(ProjectDir)util.h $(SolutionDir)include
+copy $(ProjectDir)event.h $(SolutionDir)include
 </Command>
     </PreBuildEvent>
     <PreLinkEvent>
@@ -219,6 +223,7 @@ copy $(ProjectDir)util.h $(SolutionDir)include
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="event.h" />
     <ClInclude Include="handle.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -228,6 +233,7 @@ copy $(ProjectDir)util.h $(SolutionDir)include
   <ItemGroup>
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="event.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
