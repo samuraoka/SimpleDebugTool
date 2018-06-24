@@ -18,3 +18,7 @@ auto KennyKerr::wait_one(HANDLE const h, DWORD const milliseconds) -> bool
 
 	throw windows_exception();
 }
+
+auto SIMPLEDEBUGTOOL_API KennyKerr::pack(HANDLE *) -> void
+{
+}

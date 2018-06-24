@@ -20,7 +20,7 @@ namespace KennyKerr
 	auto SIMPLEDEBUGTOOL_API wait_one(
 		HANDLE const h, DWORD const milliseconds = INFINITE) -> bool;
 
-	//auto pack(HANDLE *) -> void {}
+	auto SIMPLEDEBUGTOOL_API pack(HANDLE *) -> void;
 
 	template <typename T, typename... Args>
 	auto pack(HANDLE * left, T const & right, Args const & ... args) -> void
