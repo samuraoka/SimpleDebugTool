@@ -4,18 +4,18 @@
 using KennyKerr::event_type;
 using KennyKerr::event;
 
-event::event(event_type type) :
+KennyKerr::event::event(event_type type) :
 	h{ CreateEvent(nullptr, static_cast<BOOL>(type), false, nullptr) }
 {
 	if (!h) throw windows_exception();
 }
 
-event::event(event && other) throw() :
+KennyKerr::event::event(event && other) throw() :
 	h{ other.h.release() }
 {
 }
 
-auto event::operator=(event && other) throw()->event &
+auto KennyKerr::event::operator=(event && other) throw()->event &
 {
 	// std::move
 	// https://en.cppreference.com/w/cpp/utility/move
