@@ -3,10 +3,16 @@
 #include <Windows.h>
 #include "debug.h"
 
+#ifdef SIMPLEDEBUGTOOL_EXPORTS
+#define SIMPLEDEBUGTOOL_API __declspec(dllexport)
+#else
+#define SIMPLEDEBUGTOOL_API __declspec(dllimport)
+#endif
+
 namespace KennyKerr
 {
 	template <typename Traits>
-	class unique_handle
+	class SIMPLEDEBUGTOOL_API unique_handle
 	{
 		using pointer = typename Traits::pointer;
 
@@ -89,7 +95,7 @@ namespace KennyKerr
 
 	//TODO
 
-	struct null_handle_traits
+	struct SIMPLEDEBUGTOOL_API null_handle_traits
 	{
 		using pointer = HANDLE;
 
