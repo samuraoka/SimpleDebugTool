@@ -43,7 +43,9 @@ namespace KennyKerr
 		{
 			wchar_t buffer[1024];
 			auto count = swprintf_s(
-				buffer, L"[%d] %S(%d): ", m_pid, m_filename, m_line);
+				buffer, L"[%d][%d] %S(%d): ",
+				m_pid, GetCurrentThreadId(),
+				m_filename, m_line);
 			ASSERT(-1 != count);
 
 			ASSERT(-1 != _snwprintf_s(buffer + count,
