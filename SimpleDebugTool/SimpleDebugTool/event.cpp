@@ -25,18 +25,18 @@ auto KennyKerr::event::operator=(event && other) throw()->event &
 
 auto event::set() throw() -> void
 {
-	VERIFY(SetEvent(h.get()));
+	SIMPLE_VERIFY(SetEvent(h.get()));
 }
 
 auto event::clear() throw() -> void
 {
-	VERIFY(ResetEvent(h.get()));
+	SIMPLE_VERIFY(ResetEvent(h.get()));
 }
 
 auto event::wait(DWORD const milliseconds) throw() -> bool
 {
 	auto const result = WaitForSingleObject(h.get(), milliseconds);
-	ASSERT(result == WAIT_OBJECT_0 || result == WAIT_TIMEOUT);
+	SIMPLE_ASSERT(result == WAIT_OBJECT_0 || result == WAIT_TIMEOUT);
 
 	return result == WAIT_OBJECT_0;
 }

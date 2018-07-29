@@ -106,7 +106,7 @@ namespace KennyKerr
 
 		static auto close(pointer value) throw() -> void
 		{
-			VERIFY(CloseHandle(value));
+			SIMPLE_VERIFY(CloseHandle(value));
 		}
 	};
 

@@ -10,19 +10,19 @@
 #endif // _DEBUG
 
 #ifdef _DEBUG
-#define ASSERT _ASSERTE
-#define VERIFY ASSERT
-#define VERIFY_(result, expression) ASSERT(result == expression)
+#define SIMPLE_ASSERT _ASSERTE
+#define SIMPLE_VERIFY SIMPLE_ASSERT
+#define SIMPLE_VERIFY_(result, expression) SIMPLE_ASSERT(result == expression)
 #else
-#define ASSERT __noop
-#define VERIFY(expression) (expression)
-#define VERIFY_(result, expression) (expression)
+#define SIMPLE_ASSERT __noop
+#define SIMPLE_VERIFY(expression) (expression)
+#define SIMPLE_VERIFY_(result, expression) (expression)
 #endif // _DEBUG
 
 #ifdef _DEBUG
-#define TRACE KennyKerr::Tracer(__FILE__, __LINE__)
+#define SIMPLE_TRACE KennyKerr::Tracer(__FILE__, __LINE__)
 #else
-#define TRACE __noop
+#define SIMPLE_TRACE __noop
 #endif
 
 #ifdef SIMPLEDEBUGTOOL_EXPORTS
